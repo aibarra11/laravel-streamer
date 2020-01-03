@@ -31,5 +31,5 @@ interface Event
      *
      * @return array
      */
-    public function payload(): array;
+    public function payload();
 }
