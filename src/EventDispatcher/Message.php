@@ -21,7 +21,7 @@ class Message implements StreamableMessage
     /**
      * @inheritdoc}
      */
-    public function getContent(): array
+    public function getContent()
     {
         return $this->content;
     }
@@ -32,7 +32,7 @@ class Message implements StreamableMessage
      * @param array $meta
      * @param array $data
      */
-    public function __construct(array $meta, array $data)
+    public function __construct(array $meta, $data)
     {
         $payload = [
             '_id'     => $meta['_id'] ?? '*',
@@ -41,7 +41,7 @@ class Message implements StreamableMessage
             'name'    => $meta['name'],
             'domain'  => $meta['domain'],
             'created' => time(),
-            'data'    => json_encode($data),
+            'data'    => $data,
         ];
 
         $this->content = $payload;
