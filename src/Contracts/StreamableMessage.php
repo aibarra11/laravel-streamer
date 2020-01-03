@@ -10,5 +10,5 @@ interface StreamableMessage
     /**
      * @return array
      */
-    public function getContent(): array;
+    public function getContent();
 }
